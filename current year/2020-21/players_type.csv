@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:07bb84a3a3c3684844d4c29ced38ce8048b1ad4b9909ceb5fa916c3fe72a48f7
-size 360
+id,plural_name,plural_name_short,singular_name,singular_name_short,squad_select,squad_min_play,squad_max_play,ui_shirt_specific,sub_positions_locked,element_count
+1,Goalkeepers,GKP,Goalkeeper,GKP,2,1,1,True,[12],75
+2,Defenders,DEF,Defender,DEF,5,3,5,False,[],234
+3,Midfielders,MID,Midfielder,MID,5,2,5,False,[],268
+4,Forwards,FWD,Forward,FWD,3,1,3,False,[],86

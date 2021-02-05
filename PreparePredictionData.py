@@ -5,15 +5,17 @@ import ReadFPLData as rfd
 import CalculatingFunctions as cf
 import MapUnderstatToFPL as muf
 import PrepareTrainingData as ptd
+import os
 
 
 pd.options.mode.chained_assignment = None
 
-thisRound = 20
+thisRound = 23
 year = 2020
 
 path = './current year/2020-21/'
 savePredectionDataTo = './prediction/Gameweeks/'+str(thisRound)+'/next_games/'
+os.makedirs(savePredectionDataTo,exist_ok=True)
 
 ffd.GetPlayerData(path)
 ffd.GetFixtures(path)

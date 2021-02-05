@@ -7,11 +7,17 @@ from matplotlib import pyplot
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+import os
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
 
 print("GBM")
-thisRound = 20
+thisRound = 23
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/GBM/"
+os.makedirs(savePath,exist_ok=True)
+
 trainingData_df = pd.read_csv(dataPath + "trainingData.csv")
 trainingData_year_df = pd.DataFrame()
 for r in range(1,thisRound):
@@ -50,7 +56,7 @@ y = np.array(label_df)
 
 
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=20)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=23)
 clf = XGBRegressor(colsample_bytree=0.4,
                  gamma=0,                 
                  learning_rate=0.07,
@@ -64,8 +70,13 @@ clf = XGBRegressor(colsample_bytree=0.4,
 
 clf.fit(X_train, y_train)
 
-accuracy = clf.score(X_test, y_test)
+y_test_pred = clf.predict(X_test)
+accuracy = round(r2_score(y_test,y_test_pred)*100,2)
 print(accuracy)
+f = open(savePath+str(accuracy) + ".txt","w+")
+f.write("RMSE : "+str(mean_squared_error(y_test, y_test_pred, squared=False))+"\n")
+f.write("MAE : "+str(mean_absolute_error(y_test, y_test_pred)))
+f.close()
 
 X = np.array(predictData_df)
 forecast = clf.predict(X)

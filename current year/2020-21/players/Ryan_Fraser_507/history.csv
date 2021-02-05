@@ -1,3 +1,5 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f8d63df353e46207c66ea0acdc40b80c47ece11a9e19d592c533624b6b1d9a58
-size 557
+season_name,element_code,start_cost,end_cost,total_points,minutes,goals_scored,assists,clean_sheets,goals_conceded,own_goals,penalties_saved,penalties_missed,yellow_cards,red_cards,saves,bonus,bps,influence,creativity,threat,ict_index
+2016/17,90105,50,46,100,1764,3,9,7,32,0,0,0,3,0,0,8,345,338.4,536.5,332.0,120.7
+2017/18,90105,55,51,97,2003,5,3,2,38,0,0,0,0,0,0,13,390,492.8,646.6,413.0,155.0
+2018/19,90105,55,64,181,3165,7,14,9,64,0,0,0,2,0,0,23,751,930.6,1382.4,696.0,301.2
+2019/20,90105,75,68,73,2061,1,5,4,34,0,0,0,2,0,0,2,305,355.6,627.1,440.0,141.9

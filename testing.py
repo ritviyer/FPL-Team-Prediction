@@ -85,7 +85,7 @@ def correlation_heatmap(train):
 
 
 #combine all models
-round = 20
+round = 23
 lr = pd.read_csv('./prediction/gameweeks/' + str(round) + '/prediction/LinearRegression/PredictLR.csv')
 gbm = pd.read_csv('./prediction/gameweeks/' + str(round) + '/prediction/GBM/PredictGBM.csv')
 rf = pd.read_csv('./prediction/gameweeks/' + str(round) + '/prediction/RandomForest/PredictRF.csv')

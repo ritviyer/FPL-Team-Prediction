@@ -7,12 +7,19 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from matplotlib import style
 import pickle
+import os
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import r2_score
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_absolute_error
 
 style.use('ggplot')
 
-thisRound = 20
+thisRound = 23
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/LinearRegression/"
+os.makedirs(savePath,exist_ok=True)
+
 trainingData_df = pd.read_csv(dataPath + "trainingData.csv")
 trainingData_year_df = pd.DataFrame()
 for r in range(1,thisRound):
@@ -43,10 +50,11 @@ predictData_df = predictData_df.apply(pd.to_numeric)
 
 label_df = pd.concat([trainingData_df['label'],trainingData_year_df['label']])
     
-#Remove features which have low correlation
+##Remove features which have low correlation
 #corr_df = pd.DataFrame(trainingData_df.corr()['label'])
-#colNames = corr_df[corr_df['label'].between(-0.1,0.1)].index
+#colNames = corr_df[corr_df['label'].between(-0.05,0.05)].index
 #trainingData_df.drop(columns=colNames , inplace=True)
+#trainingData_year_df.drop(columns=colNames , inplace=True)
 #predictData_df.drop(columns=colNames , inplace=True)
 
 trainingData_df = trainingData_df.drop(columns=['label'])
@@ -56,15 +64,28 @@ trainingData_df = pd.concat([trainingData_df,trainingData_year_df])
 X = np.array(trainingData_df)
 y = np.array(label_df)
 
+##Polynomial features
+#polynomial_features = PolynomialFeatures(degree=2)
+#X = polynomial_features.fit_transform(X)
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=20)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=23)
 
 clf = LinearRegression(n_jobs=-1).fit(X_train, y_train)
 
-accuracy = clf.score(X_test, y_test)
+
+y_test_pred = clf.predict(X_test)
+accuracy = round(r2_score(y_test,y_test_pred)*100,2)
 print(accuracy)
+f = open(savePath+str(accuracy) + ".txt","w+")
+f.write("RMSE : "+str(mean_squared_error(y_test, y_test_pred, squared=False))+"\n")
+f.write("MAE : "+str(mean_absolute_error(y_test, y_test_pred)))
+f.close()
 
 X = np.array(predictData_df)
+
+##Polynomial features
+#X = polynomial_features.fit_transform(X)
+
 forecast = clf.predict(X)
 save_df['points'] = forecast
 save_df = pd.pivot_table(save_df, values=['points'], index=['player_name', 'player_team','element_type','element','round','value'], aggfunc=np.sum).reset_index()

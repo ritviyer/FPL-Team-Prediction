@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f033c6b8a9e52eb7896196b32ad11ac703a68bbe99a2a221ce946d790a1cb8f0
-size 2213
+player_name,player_team,element_type,element,round,points,value,actual_points,diff_points,p_rank,a_rank,diff_rank
+Bruno Miguel Borges Fernandes,Manchester United,3,302,9.0,10.313543,10.6,11.0,0.6864570000000008,1.0,1.0,0.0
+Marcus Rashford,Manchester United,3,306,9.0,9.478958,9.6,3.0,6.478958,2.0,12.0,10.0
+Mohamed Salah,Liverpool,3,254,9.0,9.420017,12.3,0.0,9.420017,3.0,24.0,21.0
+Harry Kane,Tottenham,4,388,9.0,8.895461,11.0,4.0,4.895460999999999,4.0,9.0,5.0
+Hakim Ziyech,Chelsea,3,114,9.0,8.280813,8.2,3.0,5.280813,5.0,12.0,7.0
+Anthony Martial,Manchester United,4,303,9.0,7.629519500000001,8.7,2.0,5.629519500000001,6.0,17.5,11.5
+Kurt Zouma,Chelsea,2,110,9.0,6.845288799999999,5.4,6.0,0.8452887999999987,7.0,7.5,0.5
+Edouard Mendy,Chelsea,1,548,9.0,6.681781299999999,5.1,6.0,0.681781299999999,8.0,7.5,0.5
+Sadio Mané,Liverpool,3,251,9.0,6.5554724,12.1,3.0,3.5554724,9.0,12.0,3.0
+Diogo Jota,Liverpool,3,468,9.0,6.3255696,6.5,9.0,2.6744304000000003,10.0,3.0,7.0
+Aaron Ramsdale,Sheffield United,1,483,9.0,6.203302,4.8,2.0,4.203302,11.0,17.5,6.5
+Heung-Min Son,Tottenham,3,390,9.0,5.791401400000001,9.5,10.0,4.208598599999999,12.0,2.0,10.0
+Arthur Masuaku,West Ham,2,442,9.0,5.7115545,4.5,7.0,1.2884455,13.0,5.5,7.5
+George Baldock,Sheffield United,2,351,9.0,5.524684,5.3,2.0,3.5246839999999997,14.0,17.5,3.5
+Raheem Sterling,Manchester City,3,276,9.0,5.4650183,11.5,1.0,4.4650183,15.0,21.5,6.5
+Jamie Vardy,Leicester,4,224,9.0,5.384848000000001,10.1,2.0,3.3848480000000007,16.0,17.5,1.5
+Patrick Bamford,Leeds,4,202,9.0,5.359114,6.1,2.0,3.359114,17.0,17.5,0.5
+Ross Barkley,Aston Villa,3,106,9.0,5.3379769999999995,6.0,1.0,4.3379769999999995,18.0,21.5,3.5
+Jorge Luiz Frello Filho,Chelsea,3,105,9.0,5.2908883,5.2,0.0,5.2908883,19.0,24.0,5.0
+Jarrod Bowen,West Ham,3,445,9.0,5.283747,6.3,3.0,2.283747,20.0,12.0,8.0
+Neal Maupay,Brighton,4,68,9.0,5.243707,6.4,2.0,3.2437069999999997,21.0,17.5,3.5
+Aaron Cresswell,West Ham,2,435,9.0,5.226797599999999,5.1,7.0,1.7732024000000006,22.0,5.5,16.5
+Pierre-Emerick Aubameyang,Arsenal,3,4,9.0,5.1726832,11.7,3.0,2.1726832,23.0,12.0,11.0
+Reece James,Chelsea,2,123,9.0,4.935199,5.0,8.0,3.064801,24.0,4.0,20.0
+Wilfried Zaha,Crystal Palace,3,141,9.0,4.790531,7.4,0.0,4.790531,25.0,24.0,1.0

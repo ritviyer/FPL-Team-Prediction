@@ -3,7 +3,7 @@ import numpy as np
 import pulp
 
 
-def optimize_team(expected_scores, prices, positions, clubs, penalty, total_budget=100, sub_factor=0.01):
+def optimize_team(expected_scores, prices, positions, clubs, penalty, total_budget=100, sub_factor=0):
     num_players = len(expected_scores)
     model = pulp.LpProblem("FPL Points Optimization", pulp.LpMaximize)
     decisions = [
@@ -69,7 +69,7 @@ def optimize_team(expected_scores, prices, positions, clubs, penalty, total_budg
     return decisions, captain_decisions, sub_decisions
 
 
-def SelectTeam(current_team, playerData_df, penal, balance):
+def SelectTeam(current_team, playerData_df, penal, balance,subFactor=0):
     expectedScores = playerData_df['points']
     prices = playerData_df['value']
     positions = playerData_df['element_type']
@@ -86,7 +86,7 @@ def SelectTeam(current_team, playerData_df, penal, balance):
     penalty = playerData_df['penalty']
 
 
-    decisions, captain, subs = optimize_team(expectedScores.values, prices.values, positions.values, clubs.values, penalty.values, budget)
+    decisions, captain, subs = optimize_team(expectedScores.values, prices.values, positions.values, clubs.values, penalty.values, budget, subFactor)
     new_team=[]
     print("Players in Starting X1\n")
     for i in range(playerData_df.shape[0]):
@@ -122,10 +122,10 @@ def SelectTeam(current_team, playerData_df, penal, balance):
     newTeam_df.loc[playerData_df['element'].isin(new_team[-4:]),"Substitute"] = "YES"
     return new_team, newTeam_df
 
-method = 'LinearRegression/'
-round = 20
-balance = 100
-playerData_df = pd.read_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+ method +'PredictLR.csv')
+method = 'RandomForest/'
+round = 23
+balance = 0.5
+playerData_df = pd.read_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+ method +'PredictRF.csv')
 my_team = pd.read_csv('./prediction/Gameweeks/'+str(round-1)+'/prediction/'+method+'PredictedTeam.csv')
 indexNames = my_team[ my_team['transfers'] == 'OUT' ].index
 my_team.drop(indexNames , inplace=True)
@@ -138,7 +138,7 @@ playerData_df['selling_value'] = ((playerData_df['element'].map(my_team.set_inde
 playerData_df['selling_value'] = (playerData_df['selling_value']*10).astype(int)/10
 
 #comment for only this round
-#playerData_df['value'] = np.where(playerData_df['value']<playerData_df['selling_value'],playerData_df['value'],playerData_df['selling_value'])
+playerData_df['value'] = np.where(playerData_df['value']<playerData_df['selling_value'],playerData_df['value'],playerData_df['selling_value'])
 
 my_team = my_team['element'].tolist()
 playerRaw_df = pd.read_csv('./current year/2020-21/players_raw.csv')
@@ -167,11 +167,11 @@ data4 = playerData_df[playerData_df['round'] == (round+3)].reset_index(drop=True
 playerData_df = pd.pivot_table(playerData_df, values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 
 
-rone = pd.pivot_table(pd.concat([data1,data2,data3]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
+rone = pd.pivot_table(pd.concat([data1,data2]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 rtwo = pd.pivot_table(pd.concat([data2,data3]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 rthree = pd.pivot_table(pd.concat([data3,data4]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 
-my_team, saveTeam_df = SelectTeam([],data1,0,balance)
+my_team, saveTeam_df = SelectTeam(my_team,rone,6,balance,0)
 
 #my_team, saveTeam_df = SelectTeam(my_team,data1,100,0)
 #my_team = SelectTeam(my_team,data3,1)
@@ -182,16 +182,16 @@ indexNames = my_team[ my_team['transfers'] == 'OUT' ].index
 my_team.drop(indexNames , inplace=True)
 
 #comment for only this round
-#saveTeam_df['value'] = saveTeam_df['element'].map(my_team.set_index('element')['value']).fillna(saveTeam_df['value'])
-#saveTeam_df.to_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeam.csv', index=False)
+saveTeam_df['value'] = saveTeam_df['element'].map(my_team.set_index('element')['value']).fillna(saveTeam_df['value'])
+saveTeam_df.to_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeam.csv', index=False)
 
-saveTeam_df.to_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeamOnlyThisRound.csv', index=False)
+#saveTeam_df.to_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeamOnlyThisRound.csv', index=False)
 
 
-#my_team = pd.read_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeam.csv')
-#indexNames = my_team[ my_team['transfers'] == 'OUT' ].index
-#my_team_list = my_team.drop(indexNames)
-#my_team_list = my_team_list['element'].tolist()
-#my_team_list, saveTeam_df = SelectTeam(my_team_list,data1,100,0)
-#my_team['Substitute'] = my_team.element.map(saveTeam_df.set_index('element').Substitute)
-#my_team.to_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeam.csv', index=False)
+my_team = pd.read_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeam.csv')
+indexNames = my_team[ my_team['transfers'] == 'OUT' ].index
+my_team_list = my_team.drop(indexNames)
+my_team_list = my_team_list['element'].tolist()
+my_team_list, saveTeam_df = SelectTeam(my_team_list,data1,100,0)
+my_team['Substitute'] = my_team.element.map(saveTeam_df.set_index('element').Substitute)
+my_team.to_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+method+'PredictedTeam.csv', index=False)

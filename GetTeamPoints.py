@@ -6,8 +6,8 @@ import json
 pd.options.mode.chained_assignment = None
 url = "https://fantasy.premierleague.com/api/element-summary/{}/"
 
-rd = 19
-start = 19
+rd = 22
+start = 22
 
 teams = pd.read_csv("./current year/2020-21/teams.csv")
 path = './prediction/Gameweeks/2020 Training Data/'

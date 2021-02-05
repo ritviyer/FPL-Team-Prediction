@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:822860cfb403e11dd88a2525a12f9b2942a685ecf6059a27a81e75bea9e89eed
-size 851
+element,fixture,opponent_team,total_points,was_home,kickoff_time,team_h_score,team_a_score,round,minutes,goals_scored,assists,clean_sheets,goals_conceded,own_goals,penalties_saved,penalties_missed,yellow_cards,red_cards,saves,bonus,bps,influence,creativity,threat,ict_index,value,transfers_balance,selected,transfers_in,transfers_out
+612,142,10,0,False,2020-12-27T12:00:00Z,1,0,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,0,0,0,0
+612,150,15,0,True,2020-12-29T18:00:00Z,1,0,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,19,30,23,4
+612,379,13,0,True,2021-01-12T20:15:00Z,0,1,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,75,290,133,58
+612,187,19,0,False,2021-01-16T15:00:00Z,1,0,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,11,232,58,47
+612,177,11,0,False,2021-01-21T20:00:00Z,0,1,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,11,232,58,47
+612,190,2,0,True,2021-01-27T18:00:00Z,3,2,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,23,279,98,75
+612,201,5,0,False,2021-01-31T12:00:00Z,2,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,45,-61,230,22,83
+612,210,12,0,True,2021-02-03T18:00:00Z,0,2,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,44,61,303,105,44
