@@ -1,18 +1,18 @@
-player_name,player_team,element_type,element,value,transfers,Substitute
-Aaron Cresswell,West Ham,2,435,5.4,,
-Bruno Miguel Borges Fernandes,Manchester United,3,302,10.8,,
-Callum Wilson,Newcastle United,4,506,6.6,,
-Dominic Calvert-Lewin,Everton,4,164,7.6,IN,
-Emiliano Martínez,Aston Villa,1,12,4.8,,
-Fraser Forster,Southampton,1,523,4.0,,YES
-Heung-Min Son,Tottenham,3,390,9.5,,
-Jack Grealish,Aston Villa,3,37,7.5,,
-James Justin,Leicester,2,239,5.1,IN,
-Jimmy Dunne,Burnley,2,519,3.9,,YES
-Neco Williams,Liverpool,2,264,4.0,,YES
-Oliver Burke,Sheffield United,3,424,4.3,,YES
-Patrick Bamford,Leeds,4,202,5.8,,
-Raheem Sterling,Manchester City,3,276,11.4,,
-Rúben Santos Gato Alves Dias,Manchester City,2,556,5.8,,
-Alexandre Lacazette,Arsenal,4,6,8.3,OUT,
-Benjamin Chilwell,Chelsea,2,232,6.1,OUT,
+player_name,player_team,element_type,element,value,transfers,Substitute,label
+Aaron Cresswell,West Ham,2,435,5.4,,,9.0
+Bruno Miguel Borges Fernandes,Manchester United,3,302,10.8,,,7.0
+Callum Wilson,Newcastle United,4,506,6.6,,,1.0
+Dominic Calvert-Lewin,Everton,4,164,7.6,IN,,12.0
+Emiliano Martínez,Aston Villa,1,12,4.8,,,9.0
+Fraser Forster,Southampton,1,523,4.0,,YES,0.0
+Heung-Min Son,Tottenham,3,390,9.5,,,10.0
+Jack Grealish,Aston Villa,3,37,7.5,,,2.0
+James Justin,Leicester,2,239,5.1,IN,,9.0
+Jimmy Dunne,Burnley,2,519,3.9,,YES,0.0
+Neco Williams,Liverpool,2,264,4.0,,YES,0.0
+Oliver Burke,Sheffield United,3,424,4.3,,YES,5.0
+Patrick Bamford,Leeds,4,202,5.8,,,6.0
+Raheem Sterling,Manchester City,3,276,11.4,,,8.0
+Rúben Santos Gato Alves Dias,Manchester City,2,556,5.8,,,1.0
+Alexandre Lacazette,Arsenal,4,6,8.3,OUT,,1.0
+Benjamin Chilwell,Chelsea,2,232,6.1,OUT,,2.0

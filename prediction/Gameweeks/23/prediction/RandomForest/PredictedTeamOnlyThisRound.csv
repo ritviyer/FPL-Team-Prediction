@@ -1,16 +1,16 @@
-player_name,player_team,element_type,element,round,value,transfers,Substitute
-Bruno Miguel Borges Fernandes,Manchester United,3,302,23.0,11.4,IN,
-Mohamed Salah,Liverpool,3,254,23.0,12.7,IN,
-João Pedro Cavaco Cancelo,Manchester City,2,277,23.0,6.0,IN,
-Marcus Rashford,Manchester United,3,306,23.0,9.5,IN,
-John Stones,Manchester City,2,273,23.0,5.2,IN,
-Matt Phillips,West Bromwich Albion,3,411,23.0,5.1,IN,
-Heung-Min Son,Tottenham,3,390,23.0,9.7,IN,
-Alexandre Lacazette,Arsenal,4,6,23.0,8.4,IN,
-James Justin,Leicester,2,239,23.0,5.1,IN,
-Ben Mee,Burnley,2,88,23.0,4.9,IN,
-Nick Pope,Burnley,1,96,23.0,5.5,IN,
-Pascal Struijk,Leeds,2,211,23.0,3.9,IN,YES
-Liam Delap,Manchester City,4,539,23.0,4.4,IN,YES
-Jed Steer,Aston Villa,1,32,23.0,3.9,IN,YES
-Indiana Vassilev,Aston Villa,4,51,23.0,4.3,IN,YES
+player_name,player_team,element_type,element,round,value,transfers,Substitute,label
+Bruno Miguel Borges Fernandes,Manchester United,3,302,23.0,11.4,IN,,7.0
+Mohamed Salah,Liverpool,3,254,23.0,12.7,IN,,7.0
+João Pedro Cavaco Cancelo,Manchester City,2,277,23.0,6.0,IN,,2.0
+Marcus Rashford,Manchester United,3,306,23.0,9.5,IN,,5.0
+John Stones,Manchester City,2,273,23.0,5.2,IN,,2.0
+Matt Phillips,West Bromwich Albion,3,411,23.0,5.1,IN,,1.0
+Heung-Min Son,Tottenham,3,390,23.0,9.7,IN,,10.0
+Alexandre Lacazette,Arsenal,4,6,23.0,8.4,IN,,1.0
+James Justin,Leicester,2,239,23.0,5.1,IN,,9.0
+Ben Mee,Burnley,2,88,23.0,4.9,IN,,1.0
+Nick Pope,Burnley,1,96,23.0,5.5,IN,,2.0
+Pascal Struijk,Leeds,2,211,23.0,3.9,IN,YES,6.0
+Liam Delap,Manchester City,4,539,23.0,4.4,IN,YES,0.0
+Jed Steer,Aston Villa,1,32,23.0,3.9,IN,YES,0.0
+Indiana Vassilev,Aston Villa,4,51,23.0,4.3,IN,YES,0.0

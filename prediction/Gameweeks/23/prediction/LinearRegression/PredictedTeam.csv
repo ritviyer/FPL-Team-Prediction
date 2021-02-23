@@ -1,16 +1,16 @@
-player_name,player_team,element_type,element,value,transfers,Substitute
-Aaron Cresswell,West Ham,2,435,5.4,,
-Benjamin Chilwell,Chelsea,2,232,5.8,,YES
-Bruno Miguel Borges Fernandes,Manchester United,3,302,10.8,,
-Callum Wilson,Newcastle United,4,506,6.6,,
-Dominic Calvert-Lewin,Everton,4,164,7.6,,
-Edouard Mendy,Chelsea,1,548,5.2,,YES
-Emiliano Martínez,Aston Villa,1,12,4.8,,
-Heung-Min Son,Tottenham,3,390,9.5,,
-Ilkay Gündogan,Manchester City,3,271,5.8,,
-Jack Grealish,Aston Villa,3,37,7.5,,
-James Justin,Leicester,2,239,4.6,,
-John Stones,Manchester City,2,273,5.2,,YES
-João Pedro Cavaco Cancelo,Manchester City,2,277,5.7,,
-Mateusz Klich,Leeds,3,198,5.5,,YES
-Patrick Bamford,Leeds,4,202,5.8,,
+player_name,player_team,element_type,element,value,transfers,Substitute,label
+Aaron Cresswell,West Ham,2,435,5.4,,,9.0
+Benjamin Chilwell,Chelsea,2,232,5.8,,YES,2.0
+Bruno Miguel Borges Fernandes,Manchester United,3,302,10.8,,,7.0
+Callum Wilson,Newcastle United,4,506,6.6,,,1.0
+Dominic Calvert-Lewin,Everton,4,164,7.6,,,12.0
+Edouard Mendy,Chelsea,1,548,5.2,,YES,3.0
+Emiliano Martínez,Aston Villa,1,12,4.8,,,9.0
+Heung-Min Son,Tottenham,3,390,9.5,,,10.0
+Ilkay Gündogan,Manchester City,3,271,5.8,,,13.0
+Jack Grealish,Aston Villa,3,37,7.5,,,2.0
+James Justin,Leicester,2,239,4.6,,,9.0
+John Stones,Manchester City,2,273,5.2,,YES,2.0
+João Pedro Cavaco Cancelo,Manchester City,2,277,5.7,,,2.0
+Mateusz Klich,Leeds,3,198,5.5,,YES,3.0
+Patrick Bamford,Leeds,4,202,5.8,,,6.0

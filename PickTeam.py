@@ -123,8 +123,8 @@ def SelectTeam(current_team, playerData_df, penal, balance,subFactor=0):
     return new_team, newTeam_df
 
 method = 'RandomForest/'
-round = 23
-balance = 0.5
+round = 25
+balance = 0.2
 playerData_df = pd.read_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+ method +'PredictRF.csv')
 my_team = pd.read_csv('./prediction/Gameweeks/'+str(round-1)+'/prediction/'+method+'PredictedTeam.csv')
 indexNames = my_team[ my_team['transfers'] == 'OUT' ].index
@@ -171,7 +171,7 @@ rone = pd.pivot_table(pd.concat([data1,data2]), values=['points'], index=['playe
 rtwo = pd.pivot_table(pd.concat([data2,data3]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 rthree = pd.pivot_table(pd.concat([data3,data4]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 
-my_team, saveTeam_df = SelectTeam(my_team,rone,6,balance,0)
+my_team, saveTeam_df = SelectTeam(my_team,rone,4,balance,0.01)
 
 #my_team, saveTeam_df = SelectTeam(my_team,data1,100,0)
 #my_team = SelectTeam(my_team,data3,1)

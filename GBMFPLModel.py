@@ -13,7 +13,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
 
 print("GBM")
-thisRound = 23
+thisRound = 25
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/GBM/"
 os.makedirs(savePath,exist_ok=True)
@@ -56,7 +56,7 @@ y = np.array(label_df)
 
 
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=23)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=25)
 clf = XGBRegressor(colsample_bytree=0.4,
                  gamma=0,                 
                  learning_rate=0.07,

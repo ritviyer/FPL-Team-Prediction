@@ -15,7 +15,7 @@ from sklearn.metrics import mean_absolute_error
 
 style.use('ggplot')
 
-thisRound = 23
+thisRound = 25
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/LinearRegression/"
 os.makedirs(savePath,exist_ok=True)
@@ -68,7 +68,7 @@ y = np.array(label_df)
 #polynomial_features = PolynomialFeatures(degree=2)
 #X = polynomial_features.fit_transform(X)
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=23)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=25)
 
 clf = LinearRegression(n_jobs=-1).fit(X_train, y_train)
 

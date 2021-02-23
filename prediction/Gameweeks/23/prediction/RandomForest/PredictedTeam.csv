@@ -1,17 +1,17 @@
-player_name,player_team,element_type,element,value,transfers,Substitute
-Alex McCarthy,Southampton,1,363,4.6,,YES
-Andrew Robertson,Liverpool,2,255,7.4,,
-Ben Mee,Burnley,2,88,4.9,IN,
-Bruno Miguel Borges Fernandes,Manchester United,3,302,10.6,,
-Callum Wilson,Newcastle United,4,506,6.6,,
-Chris Wood,Burnley,4,91,6.2,,YES
-Jack Grealish,Aston Villa,3,37,7.7,,
-John Stones,Manchester City,2,273,4.9,,
-João Pedro Cavaco Cancelo,Manchester City,2,277,5.6,,
-Karl Darlow,Newcastle United,1,325,5.0,,
-Michail Antonio,West Ham,4,437,6.4,,
-Mohamed Salah,Liverpool,3,254,12.5,,
-Neco Williams,Liverpool,2,264,4.0,,YES
-Pedro Lomba Neto,Wolverhampton Wanderers,3,474,5.9,,
-Phil Foden,Manchester City,3,284,6.3,,YES
-Darnell Furlong,West Bromwich Albion,2,422,4.5,OUT,
+player_name,player_team,element_type,element,value,transfers,Substitute,label
+Alex McCarthy,Southampton,1,363,4.6,,YES,1.0
+Andrew Robertson,Liverpool,2,255,7.4,,,0.0
+Ben Mee,Burnley,2,88,4.9,IN,,1.0
+Bruno Miguel Borges Fernandes,Manchester United,3,302,10.6,,,7.0
+Callum Wilson,Newcastle United,4,506,6.6,,,1.0
+Chris Wood,Burnley,4,91,6.2,,YES,0.0
+Jack Grealish,Aston Villa,3,37,7.7,,,2.0
+John Stones,Manchester City,2,273,4.9,,,2.0
+João Pedro Cavaco Cancelo,Manchester City,2,277,5.6,,,2.0
+Karl Darlow,Newcastle United,1,325,5.0,,,1.0
+Michail Antonio,West Ham,4,437,6.4,,,2.0
+Mohamed Salah,Liverpool,3,254,12.5,,,7.0
+Neco Williams,Liverpool,2,264,4.0,,YES,0.0
+Pedro Lomba Neto,Wolverhampton Wanderers,3,474,5.9,,,3.0
+Phil Foden,Manchester City,3,284,6.3,,YES,16.0
+Darnell Furlong,West Bromwich Albion,2,422,4.5,OUT,,0.0
