@@ -22,7 +22,7 @@ def PercentSelected(playerData_df, year):
     elif year == 2019:
         totalPlayers = 6250000
     elif year == 2020:
-        totalPlayers = 7200000
+        totalPlayers = 8000000
 
     playerData_df['selected'] = (playerData_df['selected']/totalPlayers)*100
     playerData_df.rename(columns={"selected": "selected_by_percent"}, inplace = True)

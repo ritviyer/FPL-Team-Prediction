@@ -1,18 +1,18 @@
-player_name,player_team,element_type,element,value,transfers,Substitute
-Aaron Cresswell,West Ham,2,435,5.8,IN,
-Ademola Lookman,Fulham,3,557,5.0,,YES
-Alex McCarthy,Southampton,1,363,4.6,,YES
-Bruno Miguel Borges Fernandes,Manchester United,3,302,10.9,,
-Dominic Calvert-Lewin,Everton,4,164,7.7,,
-Illan Meslier,Leeds,1,213,4.6,,
-Jack Grealish,Aston Villa,3,37,7.8,,
-James Ward-Prowse,Southampton,3,370,6.0,,
-Jannik Vestergaard,Southampton,2,369,4.5,,YES
-João Pedro Cavaco Cancelo,Manchester City,2,277,5.5,,
-Kurt Zouma,Chelsea,2,110,5.7,,YES
-Mohamed Salah,Liverpool,3,254,12.6,IN,
-Ollie Watkins,Aston Villa,4,514,6.3,,
-Patrick Bamford,Leeds,4,202,5.9,,
-Rúben Santos Gato Alves Dias,Manchester City,2,556,5.9,,
-James Justin,Leicester,2,239,4.9,OUT,
-Raheem Sterling,Manchester City,3,276,11.6,OUT,
+player_name,player_team,element_type,element,value,transfers,Substitute,label
+Aaron Cresswell,West Ham,2,435,5.8,IN,,2.0
+Ademola Lookman,Fulham,3,557,5.0,,YES,11.0
+Alex McCarthy,Southampton,1,363,4.6,,YES,3.0
+Bruno Miguel Borges Fernandes,Manchester United,3,302,10.9,,,12.0
+Dominic Calvert-Lewin,Everton,4,164,7.7,,,4.0
+Illan Meslier,Leeds,1,213,4.6,,,10.0
+Jack Grealish,Aston Villa,3,37,7.8,,,0.0
+James Ward-Prowse,Southampton,3,370,6.0,,,4.0
+Jannik Vestergaard,Southampton,2,369,4.5,,YES,3.0
+João Pedro Cavaco Cancelo,Manchester City,2,277,5.5,,,5.0
+Kurt Zouma,Chelsea,2,110,5.7,,YES,2.0
+Mohamed Salah,Liverpool,3,254,12.6,IN,,2.0
+Ollie Watkins,Aston Villa,4,514,6.3,,,2.0
+Patrick Bamford,Leeds,4,202,5.9,,,8.0
+Rúben Santos Gato Alves Dias,Manchester City,2,556,5.9,,,7.0
+James Justin,Leicester,2,239,4.9,OUT,,0.0
+Raheem Sterling,Manchester City,3,276,11.6,OUT,,8.0

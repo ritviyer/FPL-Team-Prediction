@@ -1,16 +1,16 @@
-player_name,player_team,element_type,element,round,value,transfers,Substitute
-James Ward-Prowse,Southampton,3,370,25.0,6.0,IN,
-Patrick Bamford,Leeds,4,202,25.0,6.9,IN,
-Raphael Dias Belloli,Leeds,3,570,25.0,5.4,IN,
-Danny Ings,Southampton,4,366,25.0,8.5,IN,
-Bruno Miguel Borges Fernandes,Manchester United,3,302,25.0,11.6,IN,
-Harry Kane,Tottenham,4,388,25.0,11.0,IN,
-Heung-Min Son,Tottenham,3,390,25.0,9.5,IN,
-Alex McCarthy,Southampton,1,363,25.0,4.5,IN,YES
-Pascal Struijk,Leeds,2,211,25.0,3.9,IN,YES
-Aaron Cresswell,West Ham,2,435,25.0,5.8,IN,
-Luke Shaw,Manchester United,2,300,25.0,5.0,IN,
-Ederson Santana de Moraes,Manchester City,1,278,25.0,6.1,IN,
-Andrew Robertson,Liverpool,2,255,25.0,7.3,IN,
-Issa Diop,West Ham,2,451,25.0,4.3,IN,YES
-Steven Alzate,Brighton,3,79,25.0,4.2,IN,YES
+player_name,player_team,element_type,element,round,value,transfers,Substitute,label
+James Ward-Prowse,Southampton,3,370,25.0,6.0,IN,,4.0
+Patrick Bamford,Leeds,4,202,25.0,6.9,IN,,8.0
+Raphael Dias Belloli,Leeds,3,570,25.0,5.4,IN,,12.0
+Danny Ings,Southampton,4,366,25.0,8.5,IN,,3.0
+Bruno Miguel Borges Fernandes,Manchester United,3,302,25.0,11.6,IN,,12.0
+Harry Kane,Tottenham,4,388,25.0,11.0,IN,,2.0
+Heung-Min Son,Tottenham,3,390,25.0,9.5,IN,,2.0
+Alex McCarthy,Southampton,1,363,25.0,4.5,IN,YES,3.0
+Pascal Struijk,Leeds,2,211,25.0,3.9,IN,YES,8.0
+Aaron Cresswell,West Ham,2,435,25.0,5.8,IN,,2.0
+Luke Shaw,Manchester United,2,300,25.0,5.0,IN,,2.0
+Ederson Santana de Moraes,Manchester City,1,278,25.0,6.1,IN,,6.0
+Andrew Robertson,Liverpool,2,255,25.0,7.3,IN,,1.0
+Issa Diop,West Ham,2,451,25.0,4.3,IN,YES,1.0
+Steven Alzate,Brighton,3,79,25.0,4.2,IN,YES,1.0

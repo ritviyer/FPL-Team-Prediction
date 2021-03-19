@@ -1,16 +1,16 @@
-player_name,player_team,element_type,element,round,value,transfers,Substitute
-Ilkay Gündogan,Manchester City,3,271,25.0,6.1,IN,
-Stuart Dallas,Leeds,2,200,25.0,5.0,IN,
-James Ward-Prowse,Southampton,3,370,25.0,6.0,IN,
-Aaron Cresswell,West Ham,2,435,25.0,5.8,IN,
-Mohamed Salah,Liverpool,3,254,25.0,12.6,IN,
-Bruno Miguel Borges Fernandes,Manchester United,3,302,25.0,11.6,IN,
-João Pedro Cavaco Cancelo,Manchester City,2,277,25.0,6.1,IN,
-Tomas Soucek,West Ham,3,449,25.0,5.4,IN,
-Patrick Bamford,Leeds,4,202,25.0,6.9,IN,
-Illan Meslier,Leeds,1,213,25.0,4.7,IN,YES
-Andrew Robertson,Liverpool,2,255,25.0,7.3,IN,
-Che Adams,Southampton,4,377,25.0,5.8,IN,YES
-John Stones,Manchester City,2,273,25.0,5.2,IN,YES
-Emiliano Martínez,Aston Villa,1,12,25.0,5.3,IN,
-Ashley Barnes,Burnley,4,87,25.0,6.0,IN,YES
+player_name,player_team,element_type,element,round,value,transfers,Substitute,label
+Ilkay Gündogan,Manchester City,3,271,25.0,6.1,IN,,3.0
+Stuart Dallas,Leeds,2,200,25.0,5.0,IN,,17.0
+James Ward-Prowse,Southampton,3,370,25.0,6.0,IN,,4.0
+Aaron Cresswell,West Ham,2,435,25.0,5.8,IN,,2.0
+Mohamed Salah,Liverpool,3,254,25.0,12.6,IN,,2.0
+Bruno Miguel Borges Fernandes,Manchester United,3,302,25.0,11.6,IN,,12.0
+João Pedro Cavaco Cancelo,Manchester City,2,277,25.0,6.1,IN,,5.0
+Tomas Soucek,West Ham,3,449,25.0,5.4,IN,,1.0
+Patrick Bamford,Leeds,4,202,25.0,6.9,IN,,8.0
+Illan Meslier,Leeds,1,213,25.0,4.7,IN,YES,10.0
+Andrew Robertson,Liverpool,2,255,25.0,7.3,IN,,1.0
+Che Adams,Southampton,4,377,25.0,5.8,IN,YES,3.0
+John Stones,Manchester City,2,273,25.0,5.2,IN,YES,6.0
+Emiliano Martínez,Aston Villa,1,12,25.0,5.3,IN,,2.0
+Ashley Barnes,Burnley,4,87,25.0,6.0,IN,YES,0.0

@@ -36,7 +36,7 @@ pd.set_option('display.max_columns', 100)
 
 
 #combine all models
-round = 25
+round = 29
 lr = pd.read_csv('./prediction/gameweeks/' + str(round) + '/prediction/LinearRegression/PredictLR.csv')
 gbm = pd.read_csv('./prediction/gameweeks/' + str(round) + '/prediction/GBM/PredictGBM.csv')
 rf = pd.read_csv('./prediction/gameweeks/' + str(round) + '/prediction/RandomForest/PredictRF.csv')

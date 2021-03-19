@@ -123,8 +123,8 @@ def SelectTeam(current_team, playerData_df, penal, balance,subFactor=0):
     return new_team, newTeam_df
 
 method = 'RandomForest/'
-round = 25
-balance = 0.2
+round = 29
+balance = 0.8
 playerData_df = pd.read_csv('./prediction/Gameweeks/'+str(round)+'/prediction/'+ method +'PredictRF.csv')
 my_team = pd.read_csv('./prediction/Gameweeks/'+str(round-1)+'/prediction/'+method+'PredictedTeam.csv')
 indexNames = my_team[ my_team['transfers'] == 'OUT' ].index
@@ -149,11 +149,13 @@ playerData_df['freekick'] = playerData_df.element.map(playerRaw_df.set_index('id
 playerData_df['corner'] = playerData_df.element.map(playerRaw_df.set_index('id').corners_and_indirect_freekicks_order)
 
 playerData_df.loc[(playerData_df['round']==round) & (playerData_df['next_match']<=50),"points"] = 0
+#For Free Hit, to get all players
+#playerData_df.loc[(playerData_df['round']==round+1),"points"] = 0
 playerData_df.loc[(playerData_df['round']==round) & (playerData_df['ep_next']<1),"points"] = \
     playerData_df.loc[(playerData_df['round']==round) & (playerData_df['ep_next']<1),"points"]\
    * playerData_df.loc[(playerData_df['round']==round) & (playerData_df['ep_next']<1),"ep_next"]\
    * (2 - playerData_df.loc[(playerData_df['round']==round) & (playerData_df['ep_next']<1),"ep_next"])
-playerData_df.loc[(playerData_df['penalty']==1),"points"] = playerData_df.loc[(playerData_df['penalty']==1),"points"] * 1.05
+playerData_df.loc[(playerData_df['penalty']==1),"points"] = playerData_df.loc[(playerData_df['penalty']==1),"points"] * 1.02
 playerData_df.loc[(playerData_df['freekick']==1),"points"] = playerData_df.loc[(playerData_df['freekick']==1),"points"] * 1.02
 playerData_df.loc[(playerData_df['corner']==1),"points"] = playerData_df.loc[(playerData_df['corner']==1),"points"] * 1.02
 
@@ -171,7 +173,7 @@ rone = pd.pivot_table(pd.concat([data1,data2]), values=['points'], index=['playe
 rtwo = pd.pivot_table(pd.concat([data2,data3]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 rthree = pd.pivot_table(pd.concat([data3,data4]), values=['points'], index=['player_name', 'player_team','element_type','element','value'], aggfunc=np.sum).reset_index()
 
-my_team, saveTeam_df = SelectTeam(my_team,rone,4,balance,0.01)
+my_team, saveTeam_df = SelectTeam(my_team,rone,0,balance,0.2)
 
 #my_team, saveTeam_df = SelectTeam(my_team,data1,100,0)
 #my_team = SelectTeam(my_team,data3,1)

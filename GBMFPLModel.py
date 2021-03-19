@@ -11,9 +11,12 @@ import os
 from sklearn.metrics import r2_score
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import KFold
+from sklearn.model_selection import GridSearchCV
+import pickle
 
 print("GBM")
-thisRound = 25
+thisRound = 29
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/GBM/"
 os.makedirs(savePath,exist_ok=True)
@@ -56,19 +59,26 @@ y = np.array(label_df)
 
 
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=25)
-clf = XGBRegressor(colsample_bytree=0.4,
-                 gamma=0,                 
-                 learning_rate=0.07,
-                 max_depth=3,
-                 min_child_weight=1.5,
-                 n_estimators=10000,                                                                    
-                 reg_alpha=0.75,
-                 reg_lambda=0.45,
-                 subsample=0.6,
-                 seed=42) 
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=29)
+#Orignal
+#clf = XGBRegressor(colsample_bytree=0.4,gamma=0,learning_rate=0.07,max_depth=3,min_child_weight=1.5,n_estimators=10000,reg_alpha=0.75,reg_lambda=0.45,subsample=0.6,seed=42) 
 
+splits = 2
+folds = KFold(n_splits = splits)
+hyper_params = {'n_estimators':[100], 'min_child_weight':[3,4], 'gamma':[0],'subsample':[1],'colsample_bytree':[0.5,1],'max_depth':[4,5]}
+clf = GridSearchCV(estimator = XGBRegressor(),param_grid = hyper_params, scoring= 'neg_median_absolute_error', cv = folds, verbose = 3, return_train_score=True, n_jobs=-1)
 clf.fit(X_train, y_train)
+cv_results = pd.DataFrame(clf.cv_results_)
+cv_results.to_csv(savePath + "bestParam.csv", encoding='utf-8', index = False)
+
+
+with open(savePath+'GBM.pickle','wb') as f:
+    pickle.dump(clf,f)
+
+'''
+pickle_in = open('GBM.pickle','rb')
+clf = pickle.load(pickle_in)
+'''
 
 y_test_pred = clf.predict(X_test)
 accuracy = round(r2_score(y_test,y_test_pred)*100,2)

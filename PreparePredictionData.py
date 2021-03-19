@@ -10,7 +10,7 @@ import os
 
 pd.options.mode.chained_assignment = None
 
-thisRound = 25
+thisRound = 29
 year = 2020
 
 path = './current year/2020-21/'
@@ -56,7 +56,7 @@ for round in range(thisRound,thisRound+4):
     players_raw_df['value'] = players_raw_df['now_cost']
     players_raw_df['round'] = np.nan
     players_raw_df['round'] = players_raw_df['round'].fillna(round)
-    players_raw_df['transfers_balance'] = players_raw_df['transfers_in'] - players_raw_df['transfers_out'] 
+    players_raw_df['transfers_balance'] = players_raw_df['transfers_in_event'] - players_raw_df['transfers_out_event'] 
 
 
     epl_keep_cols = ['element','round','assists','bonus','bps','clean_sheets','value','creativity',\

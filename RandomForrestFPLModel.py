@@ -11,10 +11,12 @@ import os
 from sklearn.metrics import r2_score
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
+from sklearn.model_selection import KFold
+from sklearn.model_selection import GridSearchCV
 
 style.use('ggplot')
 
-thisRound = 25
+thisRound = 29
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/RandomForest/"
 os.makedirs(savePath,exist_ok=True)
@@ -58,9 +60,27 @@ X = np.array(trainingData_df)
 y = np.array(label_df)
 
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=25)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=29)
+#original
+#clf = RandomForestRegressor(random_state=5).fit(X_train, y_train)
 
-clf = RandomForestRegressor(random_state=5).fit(X_train, y_train)
+
+splits = 2
+folds = KFold(n_splits = splits)
+hyper_params = {'n_estimators':[200], 'max_features':['auto'], 'bootstrap':[True],'verbose':[3],'warm_start':[True],'max_depth':[10]}
+clf = GridSearchCV(estimator = RandomForestRegressor(),param_grid = hyper_params, scoring= 'neg_median_absolute_error', cv = folds, verbose = 3, return_train_score=True, n_jobs=-1)
+clf.fit(X_train, y_train)
+cv_results = pd.DataFrame(clf.cv_results_)
+cv_results.to_csv(savePath + "bestParam.csv", encoding='utf-8', index = False)
+
+
+with open(savePath+'RF.pickle','wb') as f:
+    pickle.dump(clf,f)
+
+'''
+pickle_in = open('RF.pickle','rb')
+clf = pickle.load(pickle_in)
+'''
 
 y_test_pred = clf.predict(X_test)
 accuracy = round(r2_score(y_test,y_test_pred)*100,2)

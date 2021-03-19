@@ -12,10 +12,13 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.metrics import r2_score
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import mean_absolute_error
+from sklearn.feature_selection import RFE
+from sklearn.model_selection import KFold
+from sklearn.model_selection import GridSearchCV
 
 style.use('ggplot')
 
-thisRound = 25
+thisRound = 29
 dataPath = "./prediction/Gameweeks/"
 savePath = "./prediction/Gameweeks/"+str(thisRound)+"/prediction/LinearRegression/"
 os.makedirs(savePath,exist_ok=True)
@@ -50,12 +53,12 @@ predictData_df = predictData_df.apply(pd.to_numeric)
 
 label_df = pd.concat([trainingData_df['label'],trainingData_year_df['label']])
     
-##Remove features which have low correlation
-#corr_df = pd.DataFrame(trainingData_df.corr()['label'])
-#colNames = corr_df[corr_df['label'].between(-0.05,0.05)].index
-#trainingData_df.drop(columns=colNames , inplace=True)
-#trainingData_year_df.drop(columns=colNames , inplace=True)
-#predictData_df.drop(columns=colNames , inplace=True)
+#Remove features which have low correlation
+corr_df = pd.DataFrame(trainingData_df.corr()['label'])
+colNames = corr_df[corr_df['label'].between(-0.0025,0.0025)].index
+trainingData_df.drop(columns=colNames , inplace=True)
+trainingData_year_df.drop(columns=colNames , inplace=True)
+predictData_df.drop(columns=colNames , inplace=True)
 
 trainingData_df = trainingData_df.drop(columns=['label'])
 trainingData_year_df = trainingData_year_df.drop(columns=['label'])
@@ -68,10 +71,25 @@ y = np.array(label_df)
 #polynomial_features = PolynomialFeatures(degree=2)
 #X = polynomial_features.fit_transform(X)
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=25)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.15,random_state=29)
 
+splits = 2
+folds = KFold(n_splits = splits)
+hyper_params = [{'n_features_to_select': list(range(len(predictData_df.columns)-24, len(predictData_df.columns)+1)), 'step':[5]}]
 clf = LinearRegression(n_jobs=-1).fit(X_train, y_train)
+rfe = RFE(clf)
+clf = GridSearchCV(estimator = rfe, param_grid = hyper_params, scoring= 'neg_median_absolute_error', cv = folds, verbose = 3, return_train_score=True, n_jobs=-1)   
+clf.fit(X_train, y_train)
+cv_results = pd.DataFrame(clf.cv_results_)
+cv_results.to_csv(savePath + "bestParam.csv", encoding='utf-8', index = False)
 
+with open(savePath+'LR.pickle','wb') as f:
+    pickle.dump(clf,f)
+
+'''
+pickle_in = open('LR.pickle','rb')
+clf = pickle.load(pickle_in)
+'''
 
 y_test_pred = clf.predict(X_test)
 accuracy = round(r2_score(y_test,y_test_pred)*100,2)
